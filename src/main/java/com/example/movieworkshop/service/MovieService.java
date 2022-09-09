@@ -50,7 +50,7 @@ public class MovieService {
     return awardWinners;
   }
 
-  public List<Movie> filter(char chr, int amount) {
+  public List<Movie> filter(char x, int amount) {
     List<Movie> returnMovies = new ArrayList<>();
 
 
@@ -60,7 +60,7 @@ public class MovieService {
 
 
       for (char c : movieTitle) {
-        if (c == chr) found++;
+        if (c == x) found++;
       }
 
 
@@ -82,16 +82,16 @@ public class MovieService {
 
 
 
-    for (Movie movie : movieRepository.getMovies()) {
+    for (Movie Movielist : movieRepository.getMovies()) {
 
-      if (movie.getSubject().equals(g1)) {
-        g1TotalTime += movie.getLength();
+      if (Movielist.getSubject().equals(g1)) {
+        g1TotalTime += Movielist.getLength();
         g1Number++;
       }
 
 
-      if (movie.getSubject().equals(g2)) {
-        g2TotalTime += movie.getLength();
+      if (Movielist.getSubject().equals(g2)) {
+        g2TotalTime += Movielist.getLength();
         g2Number++;
       }
     }

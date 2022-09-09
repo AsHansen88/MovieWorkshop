@@ -47,9 +47,9 @@ public class MovieController {
   }
   // øvelse 3.6
   @GetMapping("/filter")
-  public List<Movie> filter(@RequestParam char chr, @RequestParam int amount) {
+  public List<Movie> filter(@RequestParam char x, @RequestParam int amount) {
 
-    return movieService.filter(chr, amount);
+    return movieService.filter(x, amount);
   }
   // øvelse 3.7
   @GetMapping("/longest")
