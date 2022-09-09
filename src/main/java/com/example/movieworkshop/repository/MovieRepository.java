@@ -14,8 +14,7 @@ public class MovieRepository {
   public void generateMoviesList() {
 
     try {
-      Scanner scan;
-      scan = new Scanner(new File("D:\\Datamatiker\\Intellij\\demo\\ERdetfrededag\\MovieWorkshop\\src\\main\\resources\\Movielist"));
+      Scanner scan = new Scanner(new File("D:\\Datamatiker\\Intellij\\demo\\ERdetfrededag\\MovieWorkshop\\src\\main\\resources\\Movielist"));
       scan.useDelimiter(";");
 
 
