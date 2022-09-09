@@ -10,12 +10,12 @@ import java.util.Random;
 
 public class MovieService {
   private MovieRepository movieRepository;
-  private Random random;
+  private Random rand;
 
   public MovieService() {
     movieRepository = new MovieRepository();
     movieRepository.generateMoviesList();
-    random = new Random();
+    rand = new Random();
   }
 
   public Movie getFirst() {
@@ -23,7 +23,7 @@ public class MovieService {
   }
 
   public Movie getRandom() {
-    int rndIndex = random.nextInt(movieRepository.getSize());
+    int rndIndex = rand.nextInt(movieRepository.getSize());
 
     return movieRepository.getOne(rndIndex);
   }
@@ -31,10 +31,10 @@ public class MovieService {
   public List<Movie> getTenSortedByPopularity() {
     List<Movie> sortMovies = new ArrayList<>();
 
-    // get random movies
+
     for (int i = 0; i < 10; i++) sortMovies.add(getRandom());
 
-    // sort by popularity
+
     Collections.sort(sortMovies);
 
     return sortMovies;
@@ -53,17 +53,17 @@ public class MovieService {
   public List<Movie> filter(char chr, int amount) {
     List<Movie> returnMovies = new ArrayList<>();
 
-    // for each movie
+
     for (Movie movie : movieRepository.getMovies()) {
       char[] movieTitle = movie.getTitle().toCharArray();
       int found = 0;
 
-      // check title chars
+
       for (char c : movieTitle) {
         if (c == chr) found++;
       }
 
-      // add if enough found
+
       if (found >= amount) returnMovies.add(movie);
     }
 
@@ -81,22 +81,22 @@ public class MovieService {
     double g2AVG = 0;
 
 
-    // check all movies
+
     for (Movie movie : movieRepository.getMovies()) {
-      // g1
+
       if (movie.getSubject().equals(g1)) {
         g1TotalTime += movie.getLength();
         g1Number++;
       }
 
-      // g2
+
       if (movie.getSubject().equals(g2)) {
         g2TotalTime += movie.getLength();
         g2Number++;
       }
     }
 
-    // avg
+
     g1AVG = (double) g1TotalTime / g1Number;
     g2AVG = (double) g2TotalTime / g2Number;
 
