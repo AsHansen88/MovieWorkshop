@@ -100,17 +100,7 @@ public class MovieService {
     g1AVG = (double) g1TotalTime / g1Number;
     g2AVG = (double) g2TotalTime / g2Number;
 
-    return String.format("""
-                        <pre>
-                        g1=%s
-                        g2=%s
-                         
-                        g1 - number=%-10d total=%-10d avg=%.2f
-                        g2 - number=%-10d total=%-10d avg=%.2f
-                        </pre>
-                        """, g1, g2,
-        g1Number, g1TotalTime, g1AVG,
-        g2Number, g2TotalTime, g2AVG);
+    return String.format( g1, g2, g1Number, g1TotalTime, g1AVG, g2Number, g2TotalTime, g2AVG);
   }
 
 }
